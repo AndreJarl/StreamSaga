@@ -36,8 +36,7 @@ function PopularTVHero() {
       <p className="text-3xl ml-14 my-5 font-bold text-left">Popular</p>
       <div className="grid grid-cols-5 items-center gap-3 justify-center mx-14">
         {shows.map((show) => (
-          
-               <ShowCard key={show.id} shows={show} />
+           <ShowCard key={show.id} shows={show} />
         ))}
       </div>
     </>

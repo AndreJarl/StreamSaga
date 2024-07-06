@@ -1,15 +1,12 @@
 
-function ShowCard({shows}){
+function ShowCard({shows: {id, poster_path, name}}){
 
     return(
         <>
-        <div key={shows.id}>  
-<img 
-        src={`https://image.tmdb.org/t/p/w300${shows.poster_path}`} 
-        alt={shows.name} 
-      />   
+        <div key={id}>  
+            <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={name}  />   
 
-</div>
+        </div>
         </>
     )
 }
