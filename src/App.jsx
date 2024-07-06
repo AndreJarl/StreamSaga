@@ -1,15 +1,18 @@
-
-
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import PopularTVHero from "./components/PopularTVHero";
+import TopRatedHero from "./components/TopRatedHero"
 function App() {
 
   return (
     <>
-      <div>
-        <p className='text-center text-red-700'>HELLO WORLD</p>
-      </div>
-     
+     <Navbar/>
+     <Hero/>
+     <PopularTVHero/>
+     <TopRatedHero/>
+
     </>
   )
 }
 
-export default App
+export default App;
