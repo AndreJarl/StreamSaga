@@ -2,10 +2,13 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router";
 import Navbar from "../components/Navbar";
+import ShowVideo from "../components/ShowVideo";
 
 function ShowInfo(){
     
     const {id} = useParams();
+    const ep = 1;
+    const season = 1;
 
     const [shows, setTVShows] = useState([]);
 
@@ -36,18 +39,19 @@ function ShowInfo(){
     return(
         <>
          <Navbar/>
-         <div className="flex my-5 justify-center items-center gap-10">
-            <div className="">
-            <img src={`https://image.tmdb.org/t/p/w300${shows.poster_path}`} alt={shows.name}  />   
+         <div className="flex flex-row my-5 justify-center items-center gap-10">
+         <ShowVideo shows={shows} ep={ep} season={season}/>
+            <div className="flex flex-col justify-center items-center ">
+           
+            <img src={`https://image.tmdb.org/t/p/w200${shows.poster_path}`} alt={shows.name}  />   
             
-            </div>
             <div className="flex flex-col justify-center gap-6">
             <p className="text-2xl font-bold">{shows.name}</p>
                 <p className="w-[600px]">{shows.overview}</p>
                 <p>{shows.original_language}</p>
-                
-               
             </div>
+            </div>
+
          </div> 
         </>
     )

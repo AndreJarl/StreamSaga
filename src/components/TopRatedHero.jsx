@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 
 function TopRatedHero() {
   const [shows, setTVShows] = useState([]);
-
   useEffect(() => {
 
     const options = {
@@ -37,7 +36,7 @@ function TopRatedHero() {
       <div className="grid grid-cols-5 items-center gap-3 justify-center mx-14">
         {shows.map((show) => (
           
-               <ShowCard key={show.id} shows={show} />
+               <ShowCard key={show.id} shows={show}/>
         ))}
       </div>
     </>
