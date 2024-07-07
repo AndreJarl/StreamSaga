@@ -15,6 +15,7 @@ function ShowVideo({shows, ep, season}){
          width="600px" 
          height="400px" 
          style={{ overflow: 'hidden' }}
+         scrolling="no"
          frameborder="0" 
          allow="fullscreen"
           allowfullscreen></iframe>

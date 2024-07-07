@@ -7,10 +7,12 @@ import ShowVideo from "../components/ShowVideo";
 function ShowInfo(){
     
     const {id} = useParams();
-    const ep = 1;
+    const [ep, setEp] = useState(1);
     const season = 1;
 
     const [shows, setTVShows] = useState([]);
+
+    
 
     useEffect(()=>{
         const options = {
@@ -36,11 +38,18 @@ function ShowInfo(){
         console.log(shows)
     },[shows]);
 
+     console.log(ep);
+
     return(
         <>
          <Navbar/>
          <div className="flex flex-row my-5 justify-center items-center gap-10">
          <ShowVideo shows={shows} ep={ep} season={season}/>
+         <div>
+         {Array.from({ length: shows.number_of_episodes}, (_, index) => (
+        <button onClick={()=> setEp(index+1)} key={index}>ep {index + 1}</button>
+      ))}
+         </div>
             <div className="flex flex-col justify-center items-center ">
            
             <img src={`https://image.tmdb.org/t/p/w200${shows.poster_path}`} alt={shows.name}  />   
