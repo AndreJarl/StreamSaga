@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import ShowCard from "../components/ShowCard";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router";
+import img404 from "../assets/404.jpg"
 
 function Search(){
 
@@ -35,22 +36,33 @@ useEffect(()=>{
 }, [shows]);
 
 
-
-
-
+if(shows.length === 0){
     return(
         <>
         <Navbar/>
-        <div className="my-10">
-            <p className="text-center text-2xl my-5">{shows.length} results for {query}....</p>
-        <div className="grid grid-cols-5 items-center gap-3 justify-center mx-14">
-        {shows.map((show) => (
-           <ShowCard key={show.id} shows={show} />
-        ))}
-      </div>
-        </div>
-        </>
+    <div className="flex flex-col justify-center items-center mx-10 gap-5">
+          <p className="text-center text-2xl my-5">No results found for {query}....</p>
+          <img width={400} src={img404} alt="" srcset="" />
+          </div>
+          </>
     )
 }
+
+
+return (
+    <>
+      <Navbar />
+      <div className="my-6">
+            <p className="text-center text-2xl my-5">{shows.length} results for {query}....</p>
+            <div className="grid grid-cols-5 items-center gap-3 justify-center mx-14">
+              {shows.map((show) => (
+                <ShowCard key={show.id} shows={show} />
+              ))}
+            </div>
+       </div>
+    </>
+)
+}
+
 
 export default Search
