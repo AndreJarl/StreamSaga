@@ -9,16 +9,16 @@ function ShowVideo({shows, ep, season}){
 
     return(
         <>
-        <div className="flex flex-col justify-center items-center">
-            <p>{shows.name} season {season}, ep {ep}</p>
+        <div className="flex flex-col justify-center w-full mt-5">
+          
         <iframe src={`https://autoembed.co/tv/tmdb/${shows.id}-${season}-${ep}`}
-         width="600px" 
-         height="400px" 
+         height="500px"
          style={{ overflow: 'hidden' }}
          scrolling="no"
          frameborder="0" 
          allow="fullscreen"
           allowfullscreen></iframe>
+            <p className=" text-left text-xl mt-4 font-bold">{shows.name} (Season {season}, Episode {ep})</p>
           </div>
         </>
     )

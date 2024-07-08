@@ -9,8 +9,10 @@ function Home(){
         <div>
             <Navbar/>
             <Hero/>
+            <div className="flex flex-col justify-center mx-20">
             <PopularTVHero/>
             <TopRatedHero/>
+            </div>
         </div>
     )
 }

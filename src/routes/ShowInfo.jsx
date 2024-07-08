@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Navbar from "../components/Navbar";
 import ShowVideo from "../components/ShowVideo";
+import Info from "../components/Info";
 
 function ShowInfo() {
   const { id } = useParams();
@@ -60,59 +61,47 @@ function ShowInfo() {
   return (
     <>
       <Navbar />
-     
-      <div className="flex flex-col my-5 justify-center items-center gap-10">
-    
-        {show && (
-          <>
-          <ShowVideo shows={show} ep={ep} season={season} />
-            <div className="grid grid-cols-10 gap-5">
-            
-              {seasons.map((seasonItem) => (
-                <button
-                  key={seasonItem.season_number}
-                  className={`px-6 text-center ${
-                    season === seasonItem.season_number ? 'bg-skyblue' : 'bg-slate-600'
-                  }`}
-                  onClick={() => {
-                    setSeason(seasonItem.season_number);
-                    setEp(1); // Reset episode to 1 when changing season
-                  }}
-                >
-                  Season {seasonItem.season_number}
-                </button>
-              ))}
-            </div>
-            <div className="grid grid-cols-10 gap-5 mt-5">
-              {episodes.map((episode, index) => (
-                <button
-                  key={index}
-                  className={`px-6 text-center ${
-                    ep === index + 1 ? 'bg-skyblue' : 'bg-slate-600'
-                  }`}
-                  onClick={() => setEp(index + 1)}
-                >
-                  Episode {index + 1}
-                </button>
-              ))}
-            </div>
-            <div className="flex flex-row justify-center items-center mt-10 gap-10">
-        
-              <div className="flex flex-col justify-center items-center">
-                <img
-                  src={`https://image.tmdb.org/t/p/w200${show.poster_path}`}
-                  alt={show.name}
-                />
-                <div className="flex flex-col justify-center gap-6">
-                  <p className="text-2xl font-bold">{show.name}</p>
-                  <p className="w-[600px]">{show.overview}</p>
-                  <p>{show.original_language}</p>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-      </div>
+       <div >
+           <div className="grid grid-cols-[70%,30%]">
+             {show &&(
+                 <>
+                   <div className="flex flex-col justify-center items-center mx-4">
+                      <ShowVideo shows={show} ep={ep} season={season}/>
+                        <div  className="flex flex-col  gap-5 w-full">
+                             <div className="grid grid-cols-4 gap-3 mt-5">
+                                {seasons.map((seasonItems)=>(
+                                   <button className={`bg-slate-600 px-6 py-3 text-center ${
+                                        season === seasonItems.season_number ? 'bg-slate-800' : 'bg-slate-600'
+                                      }`  }
+                                     onClick={()=> {setSeason(seasonItems.season_number); setEp(1);} }
+                                    
+                                   >
+                                     Season {seasonItems.season_number}
+                                   </button>
+                                ))}
+                             </div>
+                             <div className="grid grid-cols-8 gap-2 mb-10">
+                                {episodes.map((episode, index)=>(
+                                   <button className={`px-6 py-2 text-center ${
+                                    ep === index + 1 ? 'bg-slate-800' : 'bg-slate-600'
+                                  }`}
+                                     onClick={()=> setEp(index+1)}
+                                   >
+                                     {index + 1}
+                                   </button>
+                                ))}
+                             </div>
+                        </div>
+                   </div>
+                   <div className="">
+                      <p>hgfdgf</p>
+                   </div>
+              
+                </>
+             )}
+           </div>
+           
+       </div>
     </>
   );
 }
