@@ -5,7 +5,7 @@ function ShowVideo({shows, ep, season}){
 
     console.log(shows.id);
     console.log(ep);
-
+      
 
     return(
         <>
