@@ -8,11 +8,11 @@ function Home(){
     return(
         <div>
             <Navbar/>
-            <Hero/>
+            {/* <Hero/>
             <div className="flex flex-col justify-center items-center mt-14">
             <PopularTVHero/>
             <TopRatedHero/>
-            </div>
+            </div> */}
         </div>
     )
 }
