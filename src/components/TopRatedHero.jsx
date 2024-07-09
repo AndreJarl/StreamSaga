@@ -32,8 +32,8 @@ function TopRatedHero() {
 
   return (
     <>
-      <p className="text-3xl ml-5 my-5 font-bold text-left">Top Rated</p>
-      <div className="grid grid-cols-5 gap-5  items-center justify-center mx-5">
+      <p className="text-6xl ml-5 my-10 font-bold text-left">Top Rated</p>
+      <div className="grid grid-cols-5 gap-5  items-center justify-center  w-[1300px]">
         {shows.map((show) => (
           
                <ShowCard key={show.id} shows={show}/>

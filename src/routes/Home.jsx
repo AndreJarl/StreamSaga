@@ -9,7 +9,7 @@ function Home(){
         <div>
             <Navbar/>
             <Hero/>
-            <div className="flex flex-col justify-center mx-20">
+            <div className="flex flex-col justify-center items-center mt-14">
             <PopularTVHero/>
             <TopRatedHero/>
             </div>
