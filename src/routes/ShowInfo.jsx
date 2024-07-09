@@ -62,16 +62,16 @@ function ShowInfo() {
     <>
       <Navbar />
        <div >
-           <div className="grid grid-cols-[70%,30%]">
+           <div className="mt-10 flex gap-3 flex-col justify-center pt-14 lg:grid lg:grid-cols-[70%,30%]">
              {show &&(
                  <>
-                   <div className="flex flex-col justify-center items-center mx-4">
+                   <div className="flex flex-col gap-10 justify-center items-center px-10 w-full">
                       <ShowVideo shows={show} ep={ep} season={season}/>
-                        <div  className="flex flex-col  gap-5 w-full">
-                             <div className="grid grid-cols-4 gap-3 mt-5">
+                        <div  className="flex flex-col  gap-5 w-full lg:h-screen">
+                             <div className="grid lg:grid-cols-4 lg:gap-3 mt-5 grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
                                 {seasons.map((seasonItems)=>(
-                                   <button className={`bg-slate-600 px-6 py-3 text-center ${
-                                        season === seasonItems.season_number ? 'bg-slate-800' : 'bg-slate-600'
+                                   <button className={`bg-slate-600 px-6 py-3 text-center lg:text-lg text-white ${
+                                        season === seasonItems.season_number ? 'bg-red-600' : 'bg-neutral-900'
                                       }`  }
                                      onClick={()=> {setSeason(seasonItems.season_number); setEp(1);} }
                                     
@@ -80,10 +80,10 @@ function ShowInfo() {
                                    </button>
                                 ))}
                              </div>
-                             <div className="grid grid-cols-8 gap-2 mb-10">
+                             <div className="grid mt-9 lg:grid-cols-6 lg:gap-5 mb-10 grid-cols-3 gap-4 md:grid-cols-4 md:gap-6 ">
                                 {episodes.map((episode, index)=>(
-                                   <button className={`px-6 py-2 text-center ${
-                                    ep === index + 1 ? 'bg-slate-800' : 'bg-slate-600'
+                                   <button className={`px-6 py-2 text-center lg:text-lg text-white ${
+                                    ep === index + 1 ? 'bg-red-600' : 'bg-neutral-800'
                                   }`}
                                      onClick={()=> setEp(index+1)}
                                    >
@@ -93,8 +93,23 @@ function ShowInfo() {
                              </div>
                         </div>
                    </div>
-                   <div className="">
-                      <p>hgfdgf</p>
+                   <div className=" flex justify-center  bg-zinc-900 pt-5 mx-5">
+                        <div className="flex flex-col  items-center gap-6">
+                           <img className="lg:w-[400px] w-[250px]" src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}  />  
+                           <div className="lg:mx-14 mx-8 flex flex-col justify-center gap-7 text-neutral-400">
+                           <p className="text-3xl pt-5 font-semibold text-left text-neutral-200">{show.name}</p>
+                           <p className="lg:text-lg  text-neutral-400">{show.overview}</p>
+                           <p className="text-lg font-normal text-neutral-400">Original name: <span className="text-base text-red-400">{show.original_name}</span></p>
+                           <p className="text-lg font-normal text-neutral-400">Premiered: <span className="text-base text-red-400">{show.first_air_date}</span></p>
+                           <p className="text-lg font-normal text-neutral-400">Country: <span className="text-base text-red-400">{show.origin_country}</span></p>
+                           <p className="text-lg font-normal text-neutral-400">Popularity: <span className="text-base text-red-400">{show.popularity}</span></p>
+                           <p className="text-lg font-normal text-neutral-400">Votes: <span className="text-base text-red-400">{show.vote_average}</span></p>
+                           <p className="text-lg font-normal text-neutral-400">Count: <span className="text-base text-red-400">{show.vote_count}</span></p>
+                           </div>
+                           <div>
+                              
+                           </div>
+                        </div>
                    </div>
               
                 </>

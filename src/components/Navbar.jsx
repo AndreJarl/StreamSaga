@@ -57,9 +57,8 @@ function Navbar(){
                          </div>
                     <h1 className='text-4xl font-bold' onClick={menuClicked}>{isClicked ? <HiMenuAlt3 /> : < HiMenu />}</h1>
                   </div>
-               </div>
-               <div className={`bg-stone-950 w-screen h-screen absolute top-20 duration-100 ${isClicked ? ' left-1'  :'-left-[1200px]'  }`} >
-                  <div className='flex flex-col justify-center items-center pt-10'>
+                  <div className={`bg-stone-950 pt-10 w-screen h-screen absolute top-20 duration-100 ${isClicked ? ' left-1'  :'-left-[1200px]'  }`} >
+                  <div className='flex flex-col justify-center items-center bg-stone-950 '>
                   <div className='flex md:hidden lg:hidden items-center gap-2 bg-black border-white border-2 border-opacity-20 px-2 py-1 rounded-md'>
                            <input className='bg-black outline-none w-[230px] py-1'  
                                    value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id="" placeholder='Search TV Shows...' />
@@ -76,6 +75,8 @@ function Navbar(){
                                 </ul>
                    </div>            
                </div>
+               </div>
+            
             </div>
         </>
     )
