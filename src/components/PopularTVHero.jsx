@@ -35,7 +35,7 @@ function PopularTVHero() {
     <>
        
       <div className="flex flex-col justify-center items-center ">
-          <div className="flex flex-col justify-around items-center">
+          <div className="flex flex-col justify-around items-center pb-5">
               <p className="text-2xl font-semibold text-left lg:text-5xl">Popular</p>
               <p className="text-sm text-left lg:text-xl text-neutral-400 ">Discover the Hottest Shows Everyone's Talking About!</p>
           </div>
