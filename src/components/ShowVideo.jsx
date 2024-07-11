@@ -18,7 +18,7 @@ function ShowVideo({shows, ep, season}){
          frameborder="0" 
          allow="fullscreen"
           allowfullscreen></iframe>
-            <p className=" text-left ml-6 text-lg lg:text-2xl mt-10 font-bold">{shows.name} (Season {season}, Episode {ep})</p>
+            <p className=" text-left ml-6 text-lg lg:text-xl mt-10 font-bold">{shows.name} (Season {season}, Episode {ep})</p>
           </div>
         </>
     )
