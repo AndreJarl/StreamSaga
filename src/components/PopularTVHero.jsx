@@ -33,11 +33,17 @@ function PopularTVHero() {
 
   return (
     <>
-      <p className="text-4xl ml-5 my-10 font-bold text-left">Popular</p>
-      <div className="grid grid-cols-2 gap-5 items-center justify-center mx-5 lg:grid-cols-4 md:grid-cols-3">
+       
+      <div className="flex flex-col justify-center items-center ">
+          <div className="flex flex-row justify-around">
+              <p className="text-2xl font-semibold text-left lg:text-5xl">Popular</p>
+              <p className="text-sm text-left lg:text-xl text-neutral-400 ">Discover the Hottest Shows Everyone's Talking About!</p>
+          </div>
+        <div className="grid grid-cols-2 gap-3 items-center justify-center mx-6 lg:mx-20 lg:grid-cols-4  md:grid-cols-3 lg:gap-5">
         {shows.map((show) => (
            <ShowCard key={show.id} shows={show} />
         ))}
+      </div>
       </div>
     </>
   );

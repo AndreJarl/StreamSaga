@@ -32,12 +32,17 @@ function TopRatedHero() {
 
   return (
     <>
-      <p className="text-3xl ml-5 my-10 font-bold text-left">Top Rated</p>
-      <div className="grid grid-cols-2 gap-5  items-center justify-center mx-5 lg:grid-cols-4 md:grid-cols-3">
+      <div className="flex flex-col justify-center items-center mt-20">
+          <div className="lg:-ml-[55em] -ml-3 mb-5 flex flex-col gap-3 mx-5 lg:mx-0">
+              <p className="text-2xl font-semibold text-left lg:text-5xl">Top Rated</p>
+              <p className="text-sm text-left lg:text-xl text-neutral-400 ">Experience the Best: Top Rated TV Shows!</p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 items-center justify-center mx-6 lg:mx-20 lg:grid-cols-4  md:grid-cols-3 lg:gap-5">
         {shows.map((show) => (
           
                <ShowCard key={show.id} shows={show}/>
         ))}
+      </div>
       </div>
     </>
   );

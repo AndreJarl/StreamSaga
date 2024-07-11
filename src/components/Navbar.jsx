@@ -16,22 +16,22 @@ function Navbar(){
     }
     return(
         <>
-            <div className='hidden lg:flex lg:justify-center bg-black lg:pb-4 '>
+            <div className='hidden lg:flex lg:justify-center bg-black lg:pb-2 '>
                 <div className="fixed bg-black w-full flex justify-center items-center border-b border-b-white z-30 border-opacity-20">  
-                    <div className='flex justify-around w-[1200px] items-center py-7 gap-8 '>
-                        <Link to={"/"}><p className='text-4xl font-semibold text-red-500'>StreamSaga</p></Link>
+                    <div className='flex justify-around w-[1000px] items-center py-5 gap-8 '>
+                        <Link to={"/"}><p className='text-3xl font-semibold text-red-500'>STREAMSAGA</p></Link>
                          
-                         <div className='flex items-center gap-2 bg-black border-white border-2 border-opacity-20 px-2 py-1 rounded-md'>
-                           <input className='bg-black outline-none w-[400px] py-1'  
+                         <div className='flex items-center gap-2 bg-black border-white border-[1px] border-opacity-20 px-2 py-2 rounded-sm'>
+                           <input className='bg-black outline-none w-[300px] h-5 py-1 text-base'  
                                    value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id="" placeholder='Search TV Shows...' />
                              {query.trim() !== "" ? 
-                             (<Link to={`/search/${query}`}><h1 className='text-xl font-thin opacity-80'  > <FaSearch/></h1></Link>)
-                              :(<h1 className='text-xl font-thin opacity-80'  > <FaSearch/></h1>)
+                             (<Link to={`/search/${query}`}><h1 className='text-lg font-thin opacity-75'  > <FaSearch/></h1></Link>)
+                              :(<h1 className='text-lg font-thin opacity-75'  > <FaSearch/></h1>)
                             }
                              
                          </div>
                          <div>
-                         <ul className="flex text-xl gap-5 font-semibold">
+                         <ul className="flex text-base gap-5 font-semibold">
                             <li>Popular</li>
                             <li>Top Rated</li>
                             <li>Ongoing</li>
@@ -45,9 +45,9 @@ function Navbar(){
                <div className='fixed flex justify-center items-center w-full  z-50'>
                   <div className='flex justify-around items-center bg-black gap-5 w-full py-6 border-b border-b-white border-opacity-20 z-50'>
 
-                    <Link to={"/"}><p className='text-3xl font-semibold text-red-500'>StreamSaga</p></Link>
-                    <div className='hidden md:flex items-center gap-2 bg-black border-white border-2 border-opacity-20 px-2 py-1 rounded-md'>
-                           <input className='bg-black outline-none w-[400px] py-1'  
+                    <Link to={"/"}><p className='text-3xl font-semibold text-red-500'>STREAMSAGA</p></Link>
+                    <div className='hidden md:flex items-center gap-2 bg-black border-white border-[1px] border-opacity-20 px-2 py-1 rounded-sm'>
+                           <input className='bg-black outline-none w-[350px] h-7 py-1'  
                                    value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id="" placeholder='Search TV Shows...' />
                              {query.trim() !== "" ? 
                              (<Link to={`/search/${query}`}><h1 className='text-xl font-thin opacity-80'  > <FaSearch/></h1></Link>)
@@ -68,7 +68,7 @@ function Navbar(){
                             }
                              
                          </div>
-                    <ul className="flex flex-col justify-center items-center text-center text-2xl gap-14 font-semibold py-14 ">
+                    <ul className="flex flex-col justify-center items-center text-center text-2xl gap-14 font-medium py-14 ">
                                     <li onClick={menuClicked} >Popular</li>
                                     <li onClick={menuClicked} >Top Rated</li>
                                     <li onClick={menuClicked}>Ongoing</li>
