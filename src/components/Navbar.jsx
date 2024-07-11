@@ -32,9 +32,8 @@ function Navbar(){
                          </div>
                          <div>
                          <ul className="flex text-base gap-5 font-semibold">
-                            <li>Popular</li>
-                            <li>Top Rated</li>
-                            <li>Ongoing</li>
+                            <Link to={"/popular"}><li>Popular</li></Link>
+                            <Link to={"/toprated"}><li>Top Rated</li></Link>
                         </ul>
                          </div>
                     </div>
