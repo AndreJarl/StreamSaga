@@ -68,9 +68,8 @@ function Navbar(){
                              
                          </div>
                     <ul className="flex flex-col justify-center items-center text-center text-2xl gap-14 font-medium py-14 ">
-                                    <li onClick={menuClicked} >Popular</li>
-                                    <li onClick={menuClicked} >Top Rated</li>
-                                    <li onClick={menuClicked}>Ongoing</li>
+                            <Link to={"/popular"}><li>Popular</li></Link>
+                            <Link to={"/toprated"}><li>Top Rated</li></Link>
                                 </ul>
                    </div>            
                </div>
