@@ -1,6 +1,7 @@
 import axios from "axios";
 import ShowCard from "./ShowCard";
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function PopularTVHero() {
   const [shows, setTVShows] = useState([]);
@@ -35,7 +36,7 @@ function PopularTVHero() {
     <>
        
       <div className="flex flex-col justify-center items-center ">
-          <div className="flex flex-col text-center mx-2 justify-around items-center pb-5">
+          <div className="flex flex-col text-center mx-2 justify-around items-center pb-10 ">
               <p className="text-2xl font-semibold text-left lg:text-5xl">Popular</p>
               <p className="text-sm text-center lg:text-lg text-neutral-400 ">Discover the Hottest Shows Everyone's Talking About!</p>
           </div>
@@ -44,9 +45,9 @@ function PopularTVHero() {
            <ShowCard key={show.id} shows={show} />
         ))}
       </div>
-      <div className="flex flex-row items-center justify-center mx-2">
+      <div className="flex flex-row items-center justify-center mx-2 mt-10">
           <div className="bg-red-900 w-[100px] lg:w-[300px] h-[.5px]"></div>
-          <button className="bg-red-900  py-1 px-3 lg:px-7 lg:py-3 text-white mt-5 mb-10">Show more</button>
+          <Link to={"/popular"}><button className="bg-red-900  py-1 px-3 lg:px-7 lg:py-3 text-white mt-5 mb-10">Show more</button></Link>
           <div className="bg-red-900 w-[100px] lg:w-[300px] h-[.5px]"></div>
        </div>     
      </div>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import ShowCard from "./ShowCard";
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function TopRatedHero() {
   const [shows, setTVShows] = useState([]);
@@ -33,9 +34,9 @@ function TopRatedHero() {
   return (
     <>
       <div className="flex flex-col justify-center items-center mt-20">
-      <div className="flex flex-col justify-around text-center mx-2 items-center pb-5">
+      <div className="flex flex-col justify-around text-center mx-2 items-center  pb-10">
       <p className="text-2xl font-semibold text-left lg:text-5xl">Top Rated</p>
-              <p className="text-sm text-left lg:text-xl text-neutral-400 ">Experience the Best: Top Rated TV Shows!</p>
+              <p className="text-sm text-left lg:text-lg text-neutral-400 ">Experience the Best: Top Rated TV Shows!</p>
           </div>
           <div className="grid grid-cols-2 gap-3 items-center justify-center mx-6 lg:mx-20 lg:grid-cols-4  md:grid-cols-3 lg:gap-5">
         {shows.map((show) => (
@@ -45,7 +46,7 @@ function TopRatedHero() {
       </div>
       <div className="flex flex-row items-center justify-center mx-2">
           <div className="bg-red-900 w-[100px] lg:w-[300px] h-[.5px]"></div>
-          <button className="bg-red-900  py-1 px-3 lg:px-7 lg:py-3 text-white mt-5 mb-10">Show more</button>
+          <Link to={"/top_rated"}><button className="bg-red-900  py-1 px-3 lg:px-7 lg:py-3 text-white mt-5 mb-10">Show more</button></Link>
           <div className="bg-red-900 w-[100px] lg:w-[300px] h-[.5px]"></div>
        </div>    
       </div>
