@@ -45,12 +45,12 @@ function Popular(){
         <div>
               <Navbar/>
       <div className="flex flex-col justify-center items-center mt-20 lg:mt-28">
-          <div className="flex lg:flex-row flex-col gap-2 lg:gap-11 mx-5 justify-center items-center pb-5">
+          <div className="flex lg:flex-row flex-col gap-2 lg:gap-20 mx-5 justify-center items-center pb-5">
               <p className="text-4xl font-semibold text-left lg:text-5xl">Popular</p>
-              <p className="text-sm text-center text-neutral-500 ">Discover the Hottest Shows Everyone's Talking About!</p>
+              <p className="text-base text-center text-neutral-500 ">Discover the Hottest Shows Everyone's Talking About!</p>
               <p className="text-sm flex bg-zinc-700 px-3 py-1 rounded-sm items-center gap-1 text-center lg:text-sm text-neutral-100 ">Page<TfiBook/>: {page}</p>
           </div>
-        <div className="grid grid-cols-2 gap-3 items-center justify-center mx-6 lg:mx-20 lg:grid-cols-4  md:grid-cols-3 lg:gap-5">
+        <div className="grid grid-cols-2 gap-3 items-center justify-center mx-6 lg:mx-20 lg:grid-cols-5  md:grid-cols-3 lg:gap-4">
         {shows.map((show) => (
            <ShowCard key={show.id} shows={show} />
         ))}
