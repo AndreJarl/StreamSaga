@@ -21,7 +21,7 @@ function PopularTVHero() {
     axios
       .request(options)
       .then(function (response) {
-        const slice = response.data.results.slice(0, 20);
+        const slice = response.data.results.slice(0, 15);
         // console.log('Fetched shows:', slice);
         setTVShows(slice);
       })
