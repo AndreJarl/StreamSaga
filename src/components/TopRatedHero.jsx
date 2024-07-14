@@ -2,6 +2,8 @@ import axios from "axios";
 import ShowCard from "./ShowCard";
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { waveform } from 'ldrs';
+waveform.register()
 
 function TopRatedHero() {
   const [shows, setTVShows] = useState([]);
@@ -30,6 +32,30 @@ function TopRatedHero() {
   useEffect(() => {
     console.log('Updated shows:', shows);
   }, [shows]);
+
+   if(shows === null ){
+       return(
+          <>
+              <div className="flex flex-col justify-center items-center mt-24 mb-16">
+      <div className="flex flex-col justify-around text-center mx-2 items-center  pb-10">
+      <p className="text-4xl font-semibold text-left lg:text-5xl">Top Rated</p>
+              <p className="text-sm text-left lg:text-lg text-neutral-400 ">Experience the Best: Top Rated TV Shows!</p>
+          </div>
+          <div className='text-center flex flex-col justify-center items-center gap-16 text-2xl mt-4 text-white h-full'>       
+          <l-waveform
+                        size="100"
+                        stroke="10"
+                        speed="1" 
+                        color="red" 
+                      ></l-waveform>
+              <p className="font-medium text-neutral-300">Loading........</p>
+         </div>
+        
+          </div>
+          </>
+       )
+   }
+
 
   return (
     <>

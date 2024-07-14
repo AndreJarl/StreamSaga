@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import { TfiBook } from "react-icons/tfi";
-
+import { waveform } from 'ldrs';
 
 function Popular(){
 
@@ -40,6 +40,37 @@ function Popular(){
             console.error(error);
           });
     }, [shows])
+
+    waveform.register()
+
+    if(shows === null){
+      return (
+        <>
+           <div>
+              <Navbar/>
+              <div className="flex flex-col justify-center items-center mt-20 lg:mt-28 h-full mb-40">
+              <div className="flex lg:flex-row flex-col gap-2 lg:gap-20 mx-5 justify-center items-center pb-5">
+              <p className="text-4xl font-semibold text-left lg:text-5xl">Top Rated</p>
+              <p className="text-base text-center text-neutral-500 ">Experience the Best: Top Rated TV Shows!</p>
+              <p className="text-sm flex bg-zinc-700 px-3 py-1 rounded-sm items-center gap-1 text-center lg:text-sm text-neutral-100 ">Page<TfiBook/>: {page}</p>
+          </div>
+
+           <div className='text-center flex flex-col justify-center items-center gap-16 text-2xl mt-16 text-white h-full'>       
+           <l-waveform
+                size="100"
+                stroke="10"
+                speed="1" 
+                color="red" 
+              ></l-waveform>
+              <p className="font-medium text-neutral-300">Loading........</p>
+          </div>
+        </div>
+        </div>
+        <Footer/>
+        </>
+      )
+    }
+
     return(
         <>
         <div>

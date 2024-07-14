@@ -71,15 +71,15 @@ function ShowInfo() {
     return (
       <>
       <Navbar/>
-      <div className='text-center flex flex-col justify-center items-center gap-20 text-2xl mt-44 text-white h-full'>       
+      <div className='text-center flex flex-col justify-center items-center gap-14 text-2xl mt-44 text-white h-full'>       
 
-              <l-waveform
+             <l-waveform
                 size="100"
                 stroke="10"
                 speed="1" 
-                color="white" 
+                color="red" 
               ></l-waveform>
-              Loading........
+              <p className="font-medium text-neutral-300">Loading........</p>
       </div>
   
       </>

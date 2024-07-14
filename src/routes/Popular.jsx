@@ -42,38 +42,31 @@ function Popular(){
     }, [shows])
 
     waveform.register()
+    
     if(shows === null){
       return (
         <>
            <div>
               <Navbar/>
-      <div className="flex flex-col justify-center items-center mt-20 lg:mt-28">
+              <div className="flex flex-col justify-center items-center mt-20 lg:mt-28 mb-40 h-full">
           <div className="flex lg:flex-row flex-col gap-2 lg:gap-20 mx-5 justify-center items-center pb-5">
               <p className="text-4xl font-semibold text-left lg:text-5xl">Popular</p>
               <p className="text-base text-center text-neutral-500 ">Discover the Hottest Shows Everyone's Talking About!</p>
               <p className="text-sm flex bg-zinc-700 px-3 py-1 rounded-sm items-center gap-1 text-center lg:text-sm text-neutral-100 ">Page<TfiBook/>: {page}</p>
           </div>
-        <div className="grid grid-cols-2 gap-3 items-center justify-center mx-6 lg:mx-20 lg:grid-cols-5  md:grid-cols-3 lg:gap-4">
-               {shows.map((show) => (
-                        <l-waveform
-                        size="100"
-                        stroke="10"
-                        speed="1" 
-                        color="white" 
-                      ></l-waveform>
-        ))}
-      </div>
-      <div className="flex flex-row items-center justify-center mx-2">
-          <div className="bg-red-900 w-[20px] lg:w-[300px] h-[.5px]"></div>
-          <div  className="flex gap-3 mt-5">
-          <button onClick={prevPage} className="bg-red-900 flex items-center gap-2 py-1 px-3 text-xs lg:text-base lg:px-7 lg:py-1 text-white mt-5 mb-10"><FaArrowLeftLong/> PREV PAGE </button>
-          <button onClick={nextPage} className="bg-red-900 flex items-center gap-2 py-1 px-3 text-xs lg:text-base lg:px-7 lg:py-1 text-white mt-5 mb-10">NEXT PAGE <FaArrowRightLong/></button>
+
+          <div className='text-center flex flex-col justify-center items-center gap-16 text-2xl mt-16 text-white h-full'>       
+           <l-waveform
+                size="100"
+                stroke="10"
+                speed="1" 
+                color="red" 
+              ></l-waveform>
+              <p className="font-medium text-neutral-300">Loading........</p>
           </div>
-          <div className="bg-red-900 w-[20px] lg:w-[300px] h-[.5px]"></div>
-       </div>     
-     </div>
-     <Footer />
         </div>
+        </div>
+        <Footer/>
         </>
       )
     }
