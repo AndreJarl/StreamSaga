@@ -22,7 +22,7 @@ function PopularTVHero() {
       .request(options)
       .then(function (response) {
         const slice = response.data.results.slice(0, 20);
-        console.log('Fetched shows:', slice);
+        // console.log('Fetched shows:', slice);
         setTVShows(slice);
       })
       .catch(function (error) {
@@ -31,7 +31,7 @@ function PopularTVHero() {
   }, []);
 
   useEffect(() => {
-    console.log('Updated shows:', shows);
+    console.log('andrepogi69');
   }, [shows]);
 
     if(shows === null){

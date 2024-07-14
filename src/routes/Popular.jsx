@@ -42,7 +42,7 @@ function Popular(){
     }, [shows])
 
     waveform.register()
-    
+
     if(shows === null){
       return (
         <>
