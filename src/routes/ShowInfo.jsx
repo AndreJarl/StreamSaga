@@ -5,6 +5,11 @@ import Navbar from "../components/Navbar";
 import ShowVideo from "../components/ShowVideo";
 import Info from "../components/Info";
 import Footer from "../components/Footer";
+import { waveform } from 'ldrs';
+
+
+
+
 
 function ShowInfo() {
   const { id } = useParams();
@@ -59,6 +64,28 @@ function ShowInfo() {
 
   console.log(season);
   console.log(seasons);
+
+  waveform.register()
+
+  if(show === null){
+    return (
+      <>
+      <Navbar/>
+      <div className='text-center flex flex-col justify-center items-center gap-20 text-2xl mt-44 text-white h-full'>       
+
+              <l-waveform
+                size="100"
+                stroke="10"
+                speed="1" 
+                color="white" 
+              ></l-waveform>
+              Loading........
+      </div>
+  
+      </>
+    )
+  }
+
   return (
     <>
       <Navbar />
