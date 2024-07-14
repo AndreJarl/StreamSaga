@@ -68,7 +68,7 @@ function ShowInfo() {
                  <>
                    <div className="flex flex-col gap-10 justify-center items-center  w-full">
                       <ShowVideo shows={show} ep={ep} season={season}/>
-                        <div  className="flex flex-col  gap-5 w-full lg:h-screen">
+                        <div  className="flex flex-col  gap-5 w-full lg:h-full">
                              <div className="grid lg:grid-cols-5 lg:gap-5 mt-5 grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
                                 {seasons.map((seasonItems)=>(
                                    <button className={` px-4 py-3 text-center lg:text-base text-neutral-400 ${
