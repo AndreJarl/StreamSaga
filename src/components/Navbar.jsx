@@ -62,7 +62,7 @@ function Navbar(){
                            <input className='bg-black outline-none w-[230px] py-1'  
                                    value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id="" placeholder='Search TV Shows...' />
                              {query.trim() !== "" ? 
-                             (<Link to={`/search/${query}`}><h1  onClick={menuClicked} className='text-xl font-thin opacity-80'  > <FaSearch/></h1></Link>)
+                             (<Link to={`/search/${query}`}><h1  onClick={menuClicked}  className='text-xl font-thin opacity-80'  > <FaSearch/></h1></Link>)
                               :(<h1 className='text-xl font-thin opacity-80'  > <FaSearch/></h1>)
                             }
                              

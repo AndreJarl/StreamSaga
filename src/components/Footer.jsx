@@ -5,7 +5,7 @@ function Footer(){
         <>
            <div className="px-10 lg:px-20 py-5 flex flex-col lg:flex-row justify-around lg:gap-2 gap-4 items-center bg-black border-white border-t border-opacity-20 ">
                <div>
-                     <p className="text-3xl text-red-800 font-semibold">STREAMSAGA</p>
+                     <p className="text-3xl text-red-500 font-semibold">STREAMSAGA</p>
                </div>
                <div className="text-center text-xs text-neutral-500 flex flex-col gap-1 lg:w-[450px]">
                       <p className="text-neutral-400 text-sm">Created by Andre Jarl</p>

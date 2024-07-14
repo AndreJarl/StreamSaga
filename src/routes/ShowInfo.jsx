@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import Navbar from "../components/Navbar";
 import ShowVideo from "../components/ShowVideo";
 import Info from "../components/Info";
+import Footer from "../components/Footer";
 
 function ShowInfo() {
   const { id } = useParams();
@@ -118,6 +119,7 @@ function ShowInfo() {
            </div>
            
        </div>
+       <Footer/>
     </>
   );
 }
