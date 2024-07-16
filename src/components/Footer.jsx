@@ -13,8 +13,8 @@ function Footer(){
                         All contents are provided by non-affiliated third parties.</p>
                </div>
                <div className="flex gap-4 ">
-                   <h1 className="text-3xl "> <FaFacebookSquare/></h1>
-                   <h1 className="text-3xl "> <FaLinkedin/></h1>
+                   <a href="https://www.facebook.com/profile.php?id=100078410717230"><h1 className="text-3xl "> <FaFacebookSquare/></h1></a>
+                   <a href="https://www.linkedin.com/in/andre-jarl-aniana-135588244/"><h1 className="text-3xl "> <FaLinkedin/></h1></a>
                    <h1 className="text-3xl "> <FaGithub/></h1>
 
 
