@@ -52,9 +52,9 @@ if(shows.length === 0){
 return (
     <>
       <Navbar />
-      <div className="my-6 mt-24">
+      <div className="my-6 mt-16 lg:mt-24">
             <p className="text-center text-2xl my-5">{shows.length} results for {query}....</p>
-            <div className="grid grid-cols-5 items-center gap-2 justify-center mx-14">
+            <div className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 items-center gap-2 justify-center lg:mx-14 mx-4">
               {shows.map((show) => (
                 <ShowCard key={show.id} shows={show} />
               ))}

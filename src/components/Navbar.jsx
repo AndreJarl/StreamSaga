@@ -1,19 +1,29 @@
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { HiMenuAlt3, HiMenu   } from "react-icons/hi";
+import { FcSearch } from "react-icons/fc";
+import { CiSearch } from "react-icons/ci";
 
-import {Link} from 'react-router-dom'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 
 
 function Navbar(){
 
     const [query, setQuery] = useState("");
     const [isClicked, setIsClicked] = useState(false);
+    const navigate = useNavigate();
 
     const menuClicked = () => {
          setIsClicked(!isClicked);
          setQuery("");
     }
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            navigate(`/search/${query}`)
+        }
+      };
+
     return(
         <>
             <div className='hidden lg:flex lg:justify-center bg-black lg:pb-2 '>
@@ -23,10 +33,12 @@ function Navbar(){
                          
                          <div className='flex items-center gap-2 bg-black border-white border-[1px] border-opacity-20 px-2 py-2 rounded-sm'>
                            <input className='bg-black outline-none w-[300px] h-5 py-1 text-base'  
-                                   value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id="" placeholder='Search TV Shows...' />
+                                   value={query} onChange={(event)=>setQuery(event.target.value)} type="search"
+                                   onKeyDown={handleKeyDown}
+                                   name="" id="" placeholder='Search TV Shows...' />
                              {query.trim() !== "" ? 
-                             (<Link to={`/search/${query}`}><h1 className='text-lg font-thin opacity-75'  > <FaSearch/></h1></Link>)
-                              :(<h1 className='text-lg font-thin opacity-75'  > <FaSearch/></h1>)
+                             (<Link to={`/search/${query}`}><h1 className='text-2xl font-bold opacity-75'> <FcSearch/></h1></Link>)
+                              :(<h1 className='text-2xl font-thin opacity-75'  > <FcSearch/></h1>)
                             }
                              
                          </div>
@@ -47,10 +59,12 @@ function Navbar(){
                     <Link to={"/"}><p className='text-3xl font-semibold text-red-500'>STREAMSAGA</p></Link>
                     <div className='hidden md:flex items-center gap-2 bg-black border-white border-[1px] border-opacity-20 px-2 py-1 rounded-sm'>
                            <input className='bg-black outline-none w-[350px] h-7 py-1'  
-                                   value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id="" placeholder='Search TV Shows...' />
+                                   value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id=""
+                                   onKeyDown={handleKeyDown}
+                                   placeholder='Search TV Shows...' />
                              {query.trim() !== "" ? 
-                             (<Link to={`/search/${query}`}><h1 className='text-xl font-thin opacity-80'  > <FaSearch/></h1></Link>)
-                              :(<h1 className='text-xl font-thin opacity-80'  > <FaSearch/></h1>)
+                             (<Link to={`/search/${query}`}><h1 className='text-xl font-thin opacity-80'  > <FcSearch/></h1></Link>)
+                              :(<h1 className='text-xl font-thin opacity-80'  > <FcSearch/></h1>)
                             }
                              
                          </div>
@@ -60,10 +74,12 @@ function Navbar(){
                   <div className='flex flex-col justify-center items-center bg-stone-950 '>
                   <div className='flex md:hidden lg:hidden items-center gap-2 bg-black border-white border-2 border-opacity-20 px-2 py-1 rounded-md'>
                            <input className='bg-black outline-none w-[230px] py-1'  
-                                   value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id="" placeholder='Search TV Shows...' />
+                                   value={query} onChange={(event)=>setQuery(event.target.value)} type="search" name="" id=""
+                                   onKeyDown={handleKeyDown}
+                                   placeholder='Search TV Shows...' />
                              {query.trim() !== "" ? 
-                             (<Link to={`/search/${query}`}><h1  onClick={menuClicked}  className='text-xl font-thin opacity-80'  > <FaSearch/></h1></Link>)
-                              :(<h1 className='text-xl font-thin opacity-80'  > <FaSearch/></h1>)
+                             (<Link to={`/search/${query}`}><h1  onClick={menuClicked}  className='text-xl font-thin opacity-80'  > <FcSearch/></h1></Link>)
+                              :(<h1 className='text-xl font-thin opacity-80'  > <FcSearch/></h1>)
                             }
                              
                          </div>
