@@ -9,8 +9,7 @@ function Home(){
     return(
         <div>
             <Navbar/>
-            <Hero/>
-            <div className=" mt-20 ">
+            <div className=" lg:mt-24 mt-16 ">
             <PopularTVHero/>
             <TopRatedHero/>
             </div>

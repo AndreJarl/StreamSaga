@@ -50,7 +50,7 @@ function Popular(){
               <Navbar/>
               <div className="flex flex-col justify-center items-center mt-20 lg:mt-28 mb-40 h-full">
           <div className="flex lg:flex-row flex-col gap-2 lg:gap-20 mx-5 justify-center items-center pb-5">
-              <p className="text-4xl font-semibold text-left lg:text-5xl">Popular</p>
+              <p className="text-5xl font-semibold text-left lg:text-5xl">Popular</p>
               <p className="text-base text-center text-neutral-500 ">Discover the Hottest Shows Everyone's Talking About!</p>
               <p className="text-sm flex bg-zinc-700 px-3 py-1 rounded-sm items-center gap-1 text-center lg:text-sm text-neutral-100 ">Page<TfiBook/>: {page}</p>
           </div>
